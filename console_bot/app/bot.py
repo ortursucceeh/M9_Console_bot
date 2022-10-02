@@ -22,7 +22,7 @@ def input_error(func):
 
 @input_error
 def add_contact(name, number=None):
-    """Fucn which adds new contact in contacts"""
+    """Func which adds new contact in contacts"""
     if number is None:
         raise IndexError
     elif name in contacts:
@@ -33,13 +33,13 @@ def add_contact(name, number=None):
 
 @input_error
 def find_contact(name, number=None):
-    """Fucn which shows name's number"""
+    """Func which shows name's number"""
     return contacts[name]
 
 
 @input_error
 def change_contact(name, new_number=None):
-    """Fucn which changes some contact"""
+    """Func which changes some contact"""
     if name in contacts:
         contacts[name] = new_number
         return f"Contact's number with name {name} was changed to {new_number}."
@@ -49,7 +49,7 @@ def change_contact(name, new_number=None):
 
 @input_error
 def show_all_contacts(*args):
-    """Fucn which shows all contacts"""
+    """Func which shows all contacts"""
     if contacts:
         return '\n'.join([f"{key} ---:  {value}" for key, value in contacts.items()])
     else:
@@ -58,14 +58,14 @@ def show_all_contacts(*args):
 
 @input_error
 def remove_contact(name, number=None):
-    """Fucn which deletes contact"""
+    """Func which deletes contact"""
     del contacts[name]
     return f"Contact with name {name} was removed."
 
 
 @input_error
 def show_all_commands(name=None, number=None):
-    """Fucn which shows all commands"""
+    """Func which shows all commands"""
     return " # ".join(handler.keys())
 
 
